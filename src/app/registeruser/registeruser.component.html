@@ -1,0 +1,41 @@
+<div style="height: 40px;"></div>
+<div class="container col-md-3 divcard">
+  <mat-card class="example-card">
+    <h2>Register</h2>
+    <mat-card-header>
+    </mat-card-header>
+    <mat-card-content>
+      <form #registerForm="ngForm" (ngSubmit)="registerUser()">
+      
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="Username" name="username" [(ngModel)]="user.username" required>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Select a Role</mat-label>
+        <mat-select [(value)]="roleSelected">
+          <mat-option value="A">Admin</mat-option>
+          <mat-option value="M">Member</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <button mat-raised-button color="warn">Register</button>
+      
+      
+      </form>
+
+      <div class="loginStyle">
+        <a routerLink="/login">Already Registered User</a>
+      </div>
+      
+    </mat-card-content>
+  </mat-card>
+
+</div>
